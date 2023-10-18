@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    </head>
+    <body style="background-color: rgb(241, 245, 241)">
+
+        <div style="max-width:32rem;padding:0.75rem; margin-right:auto; margin-left:auto">
+      
+            <h1 style= "font-size: 30px; text-align:center; font-weight:bold; margin-top:20px;">SignIn</h1>
+            <form id="login-form" style="display:flex; flex-direction:column;gap:15px">
+                <input style="border:1px; padding:12px; border-radius:0.75rem;" type="text" placeholder='Username' id='username'/>
+                <input style="border:1px; padding:12px; border-radius:0.75rem" type="password" placeholder='Password' id='password'/>
+                <button type="submit" name="submit" id="submit" style="background-color:rgb(51 65 85); color:white; padding:0.75rem; border-radius:0.75rem; text-transform:uppercase; cursor:pointer"> Sign In</button>
+                <button type='button' style="background-color: rgb(185 28 28);color:white;padding:0.75rem;border-radius:0.75rem;text-transform:uppercase;cursor:pointer">Continue With Google</button>
+             </form>
+            
+
+            <a href="#" style="text-decoration:none">
+            <p style="color:rgb(14 165 233); margin-top:5px; padding-top:1.25rem">Forgot password?</p>
+            </a>
+            </div>
+  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.2/jquery.min.js"></script>
+    <script>
+        // $(document).ready(function () {
+        //     fetch('../components/header.html').then(response => response.text()).then(headerContent => {
+        //         document.getElementById('headerContainer').innerHTML = headerContent;
+        //     });
+
+        // });
+        // loadHeader();
+
+            $(document).ready(function () {
+            $('#login-form').submit(function (e) {
+                e.preventDefault();
+                const username = $('#username').val();
+                const password = $('#password').val();
+                const loginData = {
+                    username: username,
+                    password: password
+                };
+              fetch('http://127.0.0.1:8000/api/auth/login', 
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(loginData)
+                },
+                function (response) {
+                    console.log(response);
+                 
+                });
+            });
+        });
+      
+    </script>
+   
+</body>
+
+
+
+</html>

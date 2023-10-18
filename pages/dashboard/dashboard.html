@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EDMS</title>
+    </head>
+    <script type="text/javascript" src="../index.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        .imported_html{
+            margin: 0;  
+            padding: 0;
+        }
+    </style>
+    <body >
+        <iframe style="border:0;" id="header" sandbox="allow-top-navigation" src="../layouts/header/header.html" class="imported_html"></iframe>
+        <div id="main_content">
+            This is the dashboard template
+        </div>
+        <iframe style="border:0;" id="footer"  sandbox="allow-top-navigation" src="../layouts/footer/footer.html" class="imported_html"></iframe>
+        
+    </body>
+    <script type="text/javascript">
+        console.log(api_url);
+    </script>
+</html>
