@@ -1,31 +1,194 @@
-
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>EDMS</title>
-    </head>
-    <script type="text/javascript" src="../index.js"></script>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-        }
-        .imported_html{
-            margin: 0;  
-            padding: 0;
-        }
-    </style>
-    <body >
-        <iframe style="border:0;" id="header" sandbox="allow-top-navigation" src="../layouts/header/header.html" class="imported_html"></iframe>
-        <div id="main_content">
-            This is the dashboard template
+ <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Boxicons CSS -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <title>EDMS | Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar">
+      <div class="logo_item">
+        <i class="bx bx-menu" id="sidebarOpen"></i>
+        <img src="/components/images/d.jpg" alt="">DISI</i>
+      </div>
+
+      <a href="#" style="font-size: 30px;">
+      <i class='bx bx-sun' id="darkLight"></i>
+      </a>
+
+      <div class="search_bar"><i class="bx bx-search"></i>
+         <input type="text" placeholder="Search by name" />
         </div>
-        <iframe style="border:0;" id="footer"  sandbox="allow-top-navigation" src="../layouts/footer/footer.html" class="imported_html"></iframe>
+
+      <div class="navbar_content">
+
+        <a href="#" title="Thubnails" >
+          <i class="bx bx-image"></i>
+        </a>
+
+       <a href="#" title="List View">
+        <i class="bx bx-list-ul"></i>
+      </a>
+
+      <a href="#" title="Reports">
+        <i class="bx bx-bar-chart"></i>
+      </a>
+
+        <a href="#" title="Settings">
+          <i class="bx bx-cog"></i>
+        </a>
+
+ 
+        <a href="#" title="Notifications">
+          <i class='bx bx-bell' ></i>
+        </a>
+
+        <a href="#" title="Profile">
+          <i class="bx bx-user"></i>
+        </a>
         
-    </body>
-    <script type="text/javascript">
-        console.log(api_url);
-    </script>
+        <!-- <img src="/components/images/logo.jpg" alt="" class="profile" /> -->
+      </div>
+    </nav>
+
+    <!-- sidebar -->
+    <nav class="sidebar">
+      <div class="menu_content">
+        <ul class="menu_items">
+          <div class="menu_title menu_dahsboard"></div>
+
+           <!-- start -->
+          <li class="item">
+            <div href="#" class="nav_link submenu_item">
+              <span class="navlink_icon">
+                <i class="bx bx-home-alt"></i>
+              </span>
+              <span class="navlink">Dashboard</span>
+             </div>
+ 
+
+          <!-- duplicate this li tag if you want to add or remove  navlink with submenu -->
+          <!-- start -->
+          <li class="item">
+            <div href="#" class="nav_link submenu_item">
+              <span class="navlink_icon">
+                <i class="bx bx-grid-alt"></i>
+              </span>
+              <span class="navlink">Overview</span>
+              <i class="bx bx-chevron-right arrow-left"></i>
+            </div>
+
+            <ul class="menu_items submenu">
+              <a href="#" class="nav_link sublink">Cabinets</a>
+              <a href="#" class="nav_link sublink">Folders</a>
+              <a href="#" class="nav_link sublink">Documents</a>
+             </ul>
+          </li>
+          <!-- end -->
+        </ul>
+
+        <ul class="menu_items">
+          <div class="menu_title menu_editor"></div>
+
+           <!-- Start -->
+          <li class="item">
+            <a href="#" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bxs-magic-wand"></i>
+              </span>
+              <span class="navlink">Create Folder</span>
+            </a>
+          </li>
+          <!-- End -->
+
+          <li class="item">
+            <a href="#" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bx-loader-circle"></i>
+              </span>
+              <span class="navlink">Scan Document</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bx-cloud-upload"></i>
+              </span>
+              <span class="navlink">Upload document</span>
+            </a>
+          </li>
+        
+        </ul>
+        <ul class="menu_items">
+          <div class="menu_title menu_setting"></div>
+          <li class="item">
+            <a href="#" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bx-flag"></i>
+              </span>
+              <span class="navlink">Change Password</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="#" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bx-cog"></i>
+              </span>
+              <span class="navlink">Other Settings</span>
+            </a>
+          </li>
+
+          <ul class="menu_items">
+            <div class="menu_title menu_editor"></div>
+  
+             <!-- Start -->
+            <li class="item">
+              <a href="#" class="nav_link">
+                <span class="navlink_icon">
+                  <i class="bx bxs-magic-wand"></i>
+                </span>
+                <span class="navlink">Create Folder</span>
+              </a>
+            </li>
+            <!-- End -->
+  
+            <li class="item">
+              <a href="#" class="nav_link">
+                <span class="navlink_icon">
+                  <i class="bx bx-loader-circle"></i>
+                </span>
+                <span class="navlink">Scan Document</span>
+              </a>
+            </li>
+            <li class="item">
+              <a href="#" class="nav_link">
+                <span class="navlink_icon">
+                  <i class="bx bx-cloud-upload"></i>
+                </span>
+                <span class="navlink">Upload document</span>
+              </a>
+            </li>
+          
+          </ul>
+        
+        <!-- Sidebar Open / Close -->
+        <div class="bottom_content">
+          <div class="bottom expand_sidebar">
+            <span> Expand</span>
+            <i class='bx bx-log-in' ></i>
+          </div>
+          <div class="bottom collapse_sidebar">
+            <span> Collapse</span>
+            <i class='bx bx-log-out'></i>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
 </html>
